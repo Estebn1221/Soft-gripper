@@ -8,14 +8,14 @@ int angle = 0;
 
 void setup() {
   Serial.begin(9600);
-  myServo.attach(10);
-  myServo.write(0);
+  myServo.attach(12);
+  myServo.write(60);
 }
 
 void loop() {
   // Read the potentiometer value (0 - 1023)
   val = analogRead(potPin);
-  angle = map(val, 0, 1023, 0, 180);  // Map the value
+  angle = map(val, 0, 1023, 60, 270);  // Map the value
 
   // Set the servo position
   myServo.write(angle);
